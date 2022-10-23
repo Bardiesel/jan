@@ -17,12 +17,19 @@ func (u *UserService) FindById(id int) models.User {
 	return u.repository.FindById(id)
 }
 
-func (u *UserService) Insert(data models.User) models.User {
-	return u.repository.Insert(data)
+func (u *UserService) Insert(name string) models.User {
+	user := models.User{
+		Name: name,
+	}
+	return u.repository.Insert(user)
 }
 
-func (u *UserService) Update(data models.User) models.User {
-	return u.repository.Update(data)
+func (u *UserService) Update(id int, name string) models.User {
+	user := models.User{
+		ID:   id,
+		Name: name,
+	}
+	return u.repository.Update(user)
 }
 
 func (u *UserService) Delete(id int) bool {

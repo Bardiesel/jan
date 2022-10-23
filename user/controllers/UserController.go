@@ -17,12 +17,12 @@ func (u *UserController) FindById(id int) models.User {
 	return u.service.FindById(id)
 }
 
-func (u *UserController) Insert(data models.User) models.User {
-	return u.service.Insert(data)
+func (u *UserController) Insert(name string) models.User {
+	return u.service.Insert(name)
 }
 
-func (u *UserController) Update(data models.User) models.User {
-	return u.service.Update(data)
+func (u *UserController) Update(id int, name string) models.User {
+	return u.service.Update(id, name)
 }
 
 func (u *UserController) Delete(id int) bool {

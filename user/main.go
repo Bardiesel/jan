@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"github.com/bardiesel/jan/controllers"
-	"github.com/bardiesel/jan/models"
 	"github.com/bardiesel/jan/repositories"
 	"github.com/bardiesel/jan/services"
 )
@@ -27,12 +26,12 @@ func main() {
 	case "insert":
 		var name string
 		fmt.Scanf("%s", &name)
-		fmt.Println(userController.Insert(models.User{Name: name}))
+		fmt.Println(userController.Insert(name))
 	case "update":
 		var id int
 		var name string
 		fmt.Scanf("%d %s", &id, &name)
-		fmt.Println(userController.Update(models.User{ID: id, Name: name}))
+		fmt.Println(userController.Update(id, name))
 	case "delete":
 		var id int
 		fmt.Scanf("%d", &id)

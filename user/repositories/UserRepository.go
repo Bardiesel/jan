@@ -1,6 +1,8 @@
 package repositories
 
-import "github.com/bardiesel/jan/models"
+import (
+	"github.com/bardiesel/jan/models"
+)
 
 type UserRepository struct {
 	model *models.User
